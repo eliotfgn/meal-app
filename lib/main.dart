@@ -13,6 +13,7 @@ class App extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: const Text("Meal App"),
+          centerTitle: true,
         ),
       ),
     );
