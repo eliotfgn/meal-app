@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meal_app/screens/categories.dart';
 
 void main() {
   runApp(const App());
@@ -10,6 +11,10 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      initialRoute: '/categories',
+      routes: {
+        "/categories": (context) => CategoriesScreen(),
+      },
       home: Scaffold(
         appBar: AppBar(
           title: const Text("Meal App"),
