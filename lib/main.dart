@@ -16,12 +16,10 @@ class App extends StatelessWidget {
         "/categories": (context) => CategoriesScreen(),
       },
       theme: ThemeData(
-        textTheme: TextTheme(
-          titleLarge: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold
-          )
-        )
+        textTheme: const TextTheme(
+            titleLarge: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+        canvasColor: Colors.amber[50],
+        primarySwatch: Colors.pink,
       ),
       home: Scaffold(
         appBar: AppBar(
