@@ -15,6 +15,14 @@ class App extends StatelessWidget {
       routes: {
         "/categories": (context) => CategoriesScreen(),
       },
+      theme: ThemeData(
+        textTheme: TextTheme(
+          titleLarge: TextStyle(
+            fontSize: 20,
+            fontWeight: FontWeight.bold
+          )
+        )
+      ),
       home: Scaffold(
         appBar: AppBar(
           title: const Text("Meal App"),

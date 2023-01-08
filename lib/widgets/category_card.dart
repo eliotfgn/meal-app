@@ -9,16 +9,16 @@ class CategoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(8),
+      padding: const EdgeInsets.all(15),
       decoration: BoxDecoration(
-        color: category.color,
-        borderRadius: BorderRadius.circular(10)
-      ),
+          color: category.color, borderRadius: BorderRadius.circular(10)),
       child: Align(
         alignment: Alignment.bottomRight,
-        child: Text(category.title),
+        child: Text(
+          category.title,
+          style: Theme.of(context).textTheme.titleLarge,
+        ),
       ),
     );
   }
-
 }
