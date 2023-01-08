@@ -14,9 +14,9 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: '/categories',
+      initialRoute: '/',
       routes: {
-        "/categories": (context) => CategoriesScreen(),
+        "/": (context) => CategoriesScreen(),
       },
       onGenerateRoute: (settings) {
         if (settings.name == CategoryMealsScreen.routeName) {
@@ -27,17 +27,14 @@ class App extends StatelessWidget {
           });
         }
       },
+      onUnknownRoute: (settings) {
+        return MaterialPageRoute(builder: (context) => CategoriesScreen());
+      },
       theme: ThemeData(
         textTheme: const TextTheme(
             titleLarge: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
         canvasColor: Colors.amber[50],
         primarySwatch: Colors.pink,
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("Meal App"),
-          centerTitle: true,
-        ),
       ),
     );
   }
