@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:meal_app/screens/categories.dart';
 import 'package:meal_app/screens/category_meals_screen.dart';
 
+import 'models/category.dart';
+
 void main() {
   runApp(const App());
 }
@@ -18,10 +20,10 @@ class App extends StatelessWidget {
       },
       onGenerateRoute: (settings) {
         if (settings.name == CategoryMealsScreen.routeName) {
-          final arg = settings.arguments as String;
+          final arg = settings.arguments as Category;
 
           return MaterialPageRoute(builder: (context) {
-            return CategoryMealsScreen(categoryId: arg);
+            return CategoryMealsScreen(category: arg);
           });
         }
       },

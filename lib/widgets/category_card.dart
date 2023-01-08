@@ -12,7 +12,7 @@ class CategoryCard extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.pushNamed(context, CategoryMealsScreen.routeName,
-            arguments: category.id);
+            arguments: category);
       },
       child: Container(
         padding: const EdgeInsets.all(15),

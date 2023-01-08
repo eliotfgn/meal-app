@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meal_app/data.dart';
+import 'package:meal_app/models/category.dart';
 import 'package:meal_app/widgets/meal_item.dart';
 
 import '../models/meal.dart';
@@ -7,9 +8,9 @@ import '../models/meal.dart';
 class CategoryMealsScreen extends StatefulWidget {
   static const String routeName = 'category-meals';
 
-  final String categoryId;
+  final Category category;
 
-  const CategoryMealsScreen({Key? key, required this.categoryId})
+  const CategoryMealsScreen({Key? key, required this.category})
       : super(key: key);
 
   @override
@@ -23,7 +24,7 @@ class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
   void initState() {
     setState(() {
       meals = DUMMY_MEALS
-          .where((element) => element.categories.contains(widget.categoryId))
+          .where((element) => element.categories.contains(widget.category.id))
           .toList();
     });
     super.initState();
@@ -33,7 +34,7 @@ class _CategoryMealsScreenState extends State<CategoryMealsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.categoryId),
+        title: Text(widget.category.title),
       ),
       body: ListView.builder(
         padding: const EdgeInsets.all(15),
