@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:meal_app/data.dart';
+import 'package:meal_app/widgets/category_card.dart';
 
 class CategoriesScreen extends StatelessWidget {
   static const String namedRoute = "/categories";
@@ -9,6 +11,17 @@ class CategoriesScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Meal App"),
         centerTitle: true,
+      ),
+      body: GridView(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          crossAxisSpacing: 15,
+          mainAxisSpacing: 20
+        ),
+        padding: const EdgeInsets.all(15),
+        children:
+          DUMMY_CATEGORIES.map((category) => CategoryCard(category)).toList()
+        ,
       ),
     );
   }
