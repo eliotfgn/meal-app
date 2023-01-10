@@ -35,7 +35,7 @@ class App extends StatelessWidget {
       theme: ThemeData(
         textTheme: const TextTheme(
             titleLarge: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-        canvasColor: Colors.amber[50],
+        canvasColor: Colors.white,
         primarySwatch: Colors.pink,
       ),
     );
